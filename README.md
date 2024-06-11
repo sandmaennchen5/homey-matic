@@ -1,38 +1,43 @@
-# ***** This app is still in Beta *****
+# Homey-Matic
 
-# Homematic
+This is the actively maintained version of the Homey-Matic app, originally created by LRuesink-WebArray. This version includes support for new devices and additional features.
 
-This app adds support for Homematic device in Homey via the CCU2/CCU3/RaspberryMatic
+## New Features
+- Support for HmIP-SWO-B
 
-What works:
+## Overview
 
-Devices can be connected via the following interfaces to the CCU:
+This app adds support for Homematic devices in Homey via the CCU2/CCU3/RaspberryMatic.
 
+### Supported Interfaces
+Devices can be connected to the CCU via the following interfaces:
 * BidCos
 * Homematic IP
 * CUxD
 
-## MQTT
+## MQTT Support
 
-As of 0.15.0 the app also supports the connection to the CCU via MQTT. This feature is currently cosidered experimental. The reason it is considered experimental is that it might be required to make some changes on the CCU in future versions of the app which could cause the app not to work until the changes are implemented.
+As of version 0.15.0, the app supports connection to the CCU via MQTT. This feature is currently considered experimental, as future updates to the CCU might require changes to the app, potentially causing it to stop working until those changes are implemented.
 
-It depends on RedMatic (Node Red) and Mosquitto (MQTT broker) to be configured on the CCU and therefore only supports the CCU3 ud RaspberryMatic.
+The MQTT functionality depends on RedMatic (Node-RED) and Mosquitto (MQTT broker) being configured on the CCU, and therefore only supports CCU3 and RaspberryMatic.
 
-The implementation is fully compatible with the existing devices that have been paired before it was enabled. It is also possible to switch back to the old mode without requiring to pair devices again.
+### Benefits of MQTT
+- More stable than the RPC connection used otherwise.
+- Fixes issues where devices stopped working after some time, requiring a restart of the app.
+- Improved performance, making switch operations faster and more reliable.
 
-MQTT is more stable than the connection via RPC as used otherwise. It also fixes the issue that some users have been experiencing where the devices stopped working after some time and a restart of the app was required to fix it. The performance is also increased which means that switch operations as executed faster and more reliable.
+For a detailed setup guide, see the [Wiki](https://github.com/twendt/homey-matic/wiki/MQTT-Setup).
 
-See the [Wiki](https://github.com/twendt/homey-matic/wiki/MQTT-Setup) for a detailed description on setting it up.
+## Important Notices
+- It is recommended to disable auto-update for this app in Homey and always check this page to ensure no action is required before updating.
+- If you encounter any issues, please open an issue on GitHub.
+- If your device is not supported, please open an issue on GitHub and we will look into it.
 
-I recommend not to enable the auto update of this app in Homey and always check this page to make sure that no action is required before updating the app.
+The app uses discovery to find your CCUs on the network. It has been tested with a single CCU, so it might fail if multiple CCUs are discovered on the network.
 
-If you encounter any issues then please open an issue on GitHub.
+## Supported Devices
 
-If you have a device that is not supported currently then please open an issue on github and we will look into it.
-
-The app uses discovery to find your CCUs on the network. We were only able to test it with a single CCU yet. Therefore it is possible that the app fails in case multiple CCUs are discovered on the network.
-
-# Supported devices
+### BidCos Devices
 * HM-CC-RT-DN
 * HM-ES-PMSw1-DR
 * HM-ES-PMSw1-Pl
@@ -100,6 +105,8 @@ The app uses discovery to find your CCUs on the network. We were only able to te
 * HM-WDS100-C6-O
 * HM-WDS30-T-O
 * HM-WS550STH-I
+
+### Homematic IP Devices
 * HMIP-PS
 * HMIP-PSM
 * HMIP-SWDO
@@ -155,6 +162,6 @@ The app uses discovery to find your CCUs on the network. We were only able to te
 * HmIP-eTRV-B
 * HmIP-eTRV-C
 
-# Credits
+## Credits
 
 Thank you [@hobbyquaker](https://github.com/hobbyquaker) for your great work on binrpc, xmlrpc, hm-discover and RedMatic.
