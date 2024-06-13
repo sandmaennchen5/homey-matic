@@ -1,8 +1,9 @@
 # ***** This app is still in Beta *****
 
-# Homematic
+# Homematic 2024
 
-This app adds support for Homematic device in Homey via the CCU2/CCU3/RaspberryMatic
+This app adds support for Homematic device in Homey via the CCU2/CCU3/RaspberryMatic. 
+Homematic 2024 is an actively maintained version of the Homematic app, originally created by Timo Wendt.
 
 What works:
 
@@ -39,5 +40,11 @@ The app uses discovery to find your CCUs on the network. We were only able to te
 {{- end }}
 
 # Credits
+
+I would like to express my deep gratitude to the original creators and contributors of the Homematic app:
+- Timo Wendt
+- Bjoern Welker
+- Lex Ruesink
+- Simon Wenner
 
 Thank you [@hobbyquaker](https://github.com/hobbyquaker) for your great work on binrpc, xmlrpc, hm-discover and RedMatic.

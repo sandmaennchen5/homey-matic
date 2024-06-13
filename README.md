@@ -1,4 +1,4 @@
-# Homey-Matic
+# Homey-Matic 2024
 
 This is the actively maintained version of the Homey-Matic app, originally created by LRuesink-WebArray. This version includes support for new devices and additional features.
 
@@ -163,5 +163,11 @@ The app uses discovery to find your CCUs on the network. It has been tested with
 * HmIP-eTRV-C
 
 ## Credits
+
+I would like to express my deep gratitude to the original creators and contributors of the Homematic app:
+- Timo Wendt
+- Bjoern Welker
+- Lex Ruesink
+- Simon Wenner
 
 Thank you [@hobbyquaker](https://github.com/hobbyquaker) for your great work on binrpc, xmlrpc, hm-discover and RedMatic.

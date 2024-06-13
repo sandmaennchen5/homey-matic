@@ -16,5 +16,8 @@
   },
   "0.19.1": {
     "en": "Fix errors in HmIP-BDT and HmIP-FDT and fix api."
+  },
+  "0.20.0": {
+    "en": "migration with bugfixes from Homematic v0.19.1"
   }
 }
