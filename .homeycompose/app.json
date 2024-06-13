@@ -1,10 +1,10 @@
 {
-  "id": "de.twendt.homey.matic",
-  "version": "0.19.1",
+  "id": "com.baumus.homey.matic",
+  "version": "0.20.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Homematic"
+    "en": "Homematic 2024"
   },
   "description": {
     "en": "Connect Homematic with Homey"
@@ -23,10 +23,13 @@
   "brandColor": "#192c6e",
   "homeyCommunityTopicId": 1057,
   "author": {
-    "name": "Timo Wendt"
+    "name": "Robin Baum"
   },
   "contributors": {
     "developers": [
+      {
+        "name": "Timo Wendt"
+      },
       {
         "name": "Bjoern Welker"
       }
