@@ -10,185 +10,185 @@
 
 <body>
 
-<h1 data-i18n="settings.title"></h1>
-<p data-i18n="settings.subtitle"></p>
+    <h1 class="homey-title" data-i18n="settings.title"></h1>
+    <p class="homey-subtitle" data-i18n="settings.subtitle"></p>
 
-<fieldset id="ccu_jack_settings">
-    <legend>CCU Jack Settings</legend>
-    <div class="field row">
-        <input id="ccu_jack_mqtt_port" type="text" value="1883"/>
-        <label for="ccu_jack_mqtt_port">CCU Jack MQTT Port</label>
-    </div>
-    <div class="field row">
-        <input id="ccu_jack_user" type="text" value=""/>
-        <label for="ccu_jack_user">CCU Jack Username</label>
-    </div>
-    <div class="field row">
-        <input id="ccu_jack_password" type="password" value=""/>
-        <label for="ccu_jack_password">CCU Jack Password</label>
-    </div>
-</fieldset>
+    <fieldset class="homey-form-fieldset" id="ccu_jack_settings">
+        <legend class="homey-form-legend">CCU Jack Settings</legend>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="ccu_jack_mqtt_port">CCU Jack MQTT Port</label>
+            <input class="homey-form-input" id="ccu_jack_mqtt_port" type="text" value="1883"/>
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="ccu_jack_user">CCU Jack Username</label>
+            <input class="homey-form-input" id="ccu_jack_user" type="text" value=""/>
+        </div>
+        <div class="homey-form-group">
+            <label class="homey-form-label" for="ccu_jack_password">CCU Jack Password</label>
+            <input class="homey-form-input" id="ccu_jack_password" type="password" value=""/>
+        </div>
+    </fieldset>
 
-<fieldset>
-    <legend>Discovery Settings</legend>
-    <p data-i18n="settings.discovery.description"></p>
-    <div class="field row">
-        <input id="use_stored_bridges" type="checkbox"/>
-        <label for="use_stored_bridges" data-i18n="settings.discovery.use_stored_bridges"></label>
-    </div>
-</fieldset>
+    <fieldset class="homey-form-fieldset">
+        <legend class="homey-form-legend" data-i18n="settings.discovery.description"></legend>
+        <div class="homey-form-group">
+            <label class="homey-form-checkbox">
+                <input class="homey-form-input" id="use_stored_bridges" type="checkbox"/>
+                <span class="homey-form-checkmark"></span>
+                <span class="homey-form-checkbox-text" for="use_stored_bridges" data-i18n="settings.discovery.use_stored_bridges"></span>
+            </label>
+        </div>
+    </fieldset>
 
-<button id="save" class="right">Save changes</button>
+    <button id="save" class="homey-button-primary">Save changes</button>
 
-<p data-i18n="settings.log.title"></p>
-<button class="right" id="button_getlog" onclick="showLogLines()" data-i18n="settings.log.button.getlogs">Get Logs</button>
-<div id="loglines"></div>
+    <p class="homey-subtitle" data-i18n="settings.log.title"></p>
+    <button class="homey-button-small" id="button_getlog" onclick="showLogLines()" data-i18n="settings.log.button.getlogs">Get Logs</button>
+    <div id="loglines"></div>
 
-<button class="right" id="button_getBridges" onclick="showBridges()" data-i18n="settings.log.button.showBridges">Show
-    Stored Bridges</button>
-<div id="bridges"></div>
+    <button class="homey-button-small" id="button_getBridges" onclick="showBridges()" data-i18n="settings.log.button.showBridges">Show Stored Bridges</button>
+    <div id="bridges"></div>
 
-<button class="right" id="button_deleteBridges" onclick="deleteBridges()" data-i18n="settings.log.button.deleteBridges">Delete Stored Bridges
-</button>
+    <button class="homey-button-small" id="button_deleteBridges" onclick="deleteBridges()" data-i18n="settings.log.button.deleteBridges">Delete Stored Bridges</button>
 
-<script type="text/javascript">
-    var ccuJackSettingsElement = document.getElementById('ccu_jack_settings');
-    var useStoredBridges = document.getElementById('use_stored_bridges');
-    var saveElement = document.getElementById('save');
-    var ccuJackUserElement = document.getElementById('ccu_jack_user');
-    var ccuJackPasswordElement = document.getElementById('ccu_jack_password');
-    var ccuJackMQTTPortElement = document.getElementById('ccu_jack_mqtt_port');
+    <script type="text/javascript">
+        var ccuJackSettingsElement = document.getElementById('ccu_jack_settings');
+        var useStoredBridges = document.getElementById('use_stored_bridges');
+        var saveElement = document.getElementById('save');
+        var ccuJackUserElement = document.getElementById('ccu_jack_user');
+        var ccuJackPasswordElement = document.getElementById('ccu_jack_password');
+        var ccuJackMQTTPortElement = document.getElementById('ccu_jack_mqtt_port');
 
-    function onHomeyReady(Homey) {
-        HomeyAPI = Homey;
+        function onHomeyReady(Homey) {
+            HomeyAPI = Homey;
 
-        Homey.get('ccu_jack_mqtt_port', function (err, ccu_jack_mqtt_port) {
-            if (err) return Homey.alert(err);
-            if (typeof ccu_jack_mqtt_port == 'undefined' || ccu_jack_mqtt_port == null) {
-                return;
-            }
-            ccuJackMQTTPortElement.value = ccu_jack_mqtt_port;
-        });
-
-        Homey.get('ccu_jack_user', function (err, ccu_jack_user) {
-            if (err) return Homey.alert(err);
-            if (typeof ccu_jack_user == 'undefined' || ccu_jack_user == null) {
-                ccuJackUserElement.value = "";
-                return;
-            }
-            ccuJackUserElement.value = ccu_jack_user;
-        });
-
-        Homey.get('ccu_jack_password', function (err, ccu_jack_password) {
-            if (err) return Homey.alert(err);
-            if (typeof ccu_jack_password == 'undefined' || ccu_jack_password == null) {
-                ccuJackPasswordElement.value = "";
-                return;
-            }
-            ccuJackPasswordElement.value = ccu_jack_password;
-        });
-
-        Homey.get('use_stored_bridges', function (err, use_stored_bridges) {
-            if (err) return Homey.alert(err);
-            useStoredBridges.value = use_stored_bridges;
-            if (typeof use_stored_bridges == 'undefined' || use_stored_bridges == null) use_stored_bridges = false;
-            useStoredBridges.checked = use_stored_bridges;
-        });
-
-        saveElement.addEventListener('click', function (e) {
-            let errMsg = validateSettings();
-            if (errMsg !== undefined) {
-                return Homey.alert(errMsg, 'error');
-            }
-
-            Homey.set('ccu_jack_mqtt_port', Number(ccuJackMQTTPortElement.value), function (err) {
+            Homey.get('ccu_jack_mqtt_port', function (err, ccu_jack_mqtt_port) {
                 if (err) return Homey.alert(err);
-            });
-
-            if (ccuJackUserElement === "") {
-                Homey.set('ccu_jack_user', undefined, function (err) {
-                    if (err) return Homey.alert(err);
-                });
-            } else {
-                Homey.set('ccu_jack_user', ccuJackUserElement.value, function (err) {
-                    if (err) return Homey.alert(err);
-                });
-            }
-            if (ccuJackPasswordElement === "") {
-                Homey.set('ccu_jack_password', undefined, function (err) {
-                    if (err) return Homey.alert(err);
-                });
-            } else {
-                Homey.set('ccu_jack_password', ccuJackPasswordElement.value, function (err) {
-                    if (err) return Homey.alert(err);
-                });
-            }
-
-            Homey.set('use_stored_bridges', useStoredBridges.checked, function (err) {
-                if (err) return Homey.alert(err);
-            });
-
-            Homey.alert('Settings saved', 'info');
-        });
-
-        // Tell Homey we're ready to be displayed
-        Homey.ready();
-    }
-
-    function validateSettings() {
-        if ((ccuJackUserElement.value !== "" && ccuJackPasswordElement.value === "") || (ccuJackUserElement.value === "" && ccuJackPasswordElement.value !== "")) {
-            return "User and Password must be both set to enable authentication or both be empty to disable authentication";
-        }
-        if (ccuJackMQTTPortElement.value === "") {
-            return "MQTT Port cannot be empty";
-        }
-        if (!isPositiveInteger(ccuJackMQTTPortElement.value)) {
-            return "MQTT Port must be a positive integer value";
-        }
-    }
-
-    function isPositiveInteger(str) {
-        var n = Math.floor(Number(str));
-        return n !== Infinity && String(n) === str && n >= 0;
-    }
-
-    function showLogLines() {
-        HomeyAPI.api('GET', 'log/getloglines/', function (err, result) {
-            if (!err) {
-                document.getElementById('loglines').innerHTML = '';
-                for (var i = 0; i < result.length; i++) {
-                    document.getElementById('loglines').innerHTML += result[i];
-                    document.getElementById('loglines').innerHTML += "<br />";
+                if (typeof ccu_jack_mqtt_port == 'undefined' || ccu_jack_mqtt_port == null) {
+                    return;
                 }
-            }
-        });
-    }
+                ccuJackMQTTPortElement.value = ccu_jack_mqtt_port;
+            });
 
-    function showBridges() {
-        HomeyAPI.api('GET', 'bridges/get/', function (err, result) {
-            if (!err) {
-                document.getElementById('bridges').innerHTML = '';
-                if (result.length > 0) {
-                    for (var i = 0; i < result.length; i++) {
-                        document.getElementById('bridges').innerHTML += result[i];
-                        document.getElementById('bridges').innerHTML += "<br />";
-                    }
+            Homey.get('ccu_jack_user', function (err, ccu_jack_user) {
+                if (err) return Homey.alert(err);
+                if (typeof ccu_jack_user == 'undefined' || ccu_jack_user == null) {
+                    ccuJackUserElement.value = "";
+                    return;
+                }
+                ccuJackUserElement.value = ccu_jack_user;
+            });
+
+            Homey.get('ccu_jack_password', function (err, ccu_jack_password) {
+                if (err) return Homey.alert(err);
+                if (typeof ccu_jack_password == 'undefined' || ccu_jack_password == null) {
+                    ccuJackPasswordElement.value = "";
+                    return;
+                }
+                ccuJackPasswordElement.value = ccu_jack_password;
+            });
+
+            Homey.get('use_stored_bridges', function (err, use_stored_bridges) {
+                if (err) return Homey.alert(err);
+                useStoredBridges.value = use_stored_bridges;
+                if (typeof use_stored_bridges == 'undefined' || use_stored_bridges == null) use_stored_bridges = false;
+                useStoredBridges.checked = use_stored_bridges;
+            });
+
+            saveElement.addEventListener('click', function (e) {
+                let errMsg = validateSettings();
+                if (errMsg !== undefined) {
+                    return Homey.alert(errMsg, 'error');
+                }
+
+                Homey.set('ccu_jack_mqtt_port', Number(ccuJackMQTTPortElement.value), function (err) {
+                    if (err) return Homey.alert(err);
+                });
+
+                if (ccuJackUserElement.value === "") {
+                    Homey.set('ccu_jack_user', undefined, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
                 } else {
-                    document.getElementById('bridges').innerHTML = 'No bridges stored';
+                    Homey.set('ccu_jack_user', ccuJackUserElement.value, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
                 }
-            }
-        });
-    }
+                if (ccuJackPasswordElement.value === "") {
+                    Homey.set('ccu_jack_password', undefined, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
+                } else {
+                    Homey.set('ccu_jack_password', ccuJackPasswordElement.value, function (err) {
+                        if (err) return Homey.alert(err);
+                    });
+                }
 
-    function deleteBridges() {
-        HomeyAPI.api('GET', 'bridges/delete/', function (err, result) {
-            if (!err) {
-                HomeyAPI.alert("Bridges deleted", 'info');
-                showBridges();
+                Homey.set('use_stored_bridges', useStoredBridges.checked, function (err) {
+                    if (err) return Homey.alert(err);
+                });
+
+                Homey.alert('Settings saved', 'info');
+            });
+
+            // Tell Homey we're ready to be displayed
+            Homey.ready();
+        }
+
+        function validateSettings() {
+            if ((ccuJackUserElement.value !== "" && ccuJackPasswordElement.value === "") || (ccuJackUserElement.value === "" && ccuJackPasswordElement.value !== "")) {
+                return "User and Password must be both set to enable authentication or both be empty to disable authentication";
             }
-        });
-    }
-</script>
+            if (ccuJackMQTTPortElement.value === "") {
+                return "MQTT Port cannot be empty";
+            }
+            if (!isPositiveInteger(ccuJackMQTTPortElement.value)) {
+                return "MQTT Port must be a positive integer value";
+            }
+        }
+
+        function isPositiveInteger(str) {
+            var n = Math.floor(Number(str));
+            return n !== Infinity && String(n) === str && n >= 0;
+        }
+
+        function showLogLines() {
+            HomeyAPI.api('GET', 'log/getloglines/', function (err, result) {
+                if (!err) {
+                    document.getElementById('loglines').innerHTML = '';
+                    for (var i = 0; i < result.length; i++) {
+                        document.getElementById('loglines').innerHTML += result[i];
+                        document.getElementById('loglines').innerHTML += "<br />";
+                    }
+                }
+            });
+        }
+
+        function showBridges() {
+            HomeyAPI.api('GET', 'bridges/get/', function (err, result) {
+                if (!err) {
+                    document.getElementById('bridges').innerHTML = '';
+                    if (result.length > 0) {
+                        for (var i = 0; i < result.length; i++) {
+                            document.getElementById('bridges').innerHTML += result[i];
+                            document.getElementById('bridges').innerHTML += "<br />";
+                        }
+                    } else {
+                        document.getElementById('bridges').innerHTML = 'No bridges stored';
+                    }
+                }
+            });
+        }
+
+        function deleteBridges() {
+            HomeyAPI.api('GET', 'bridges/delete/', function (err, result) {
+                if (!err) {
+                    HomeyAPI.alert("Bridges deleted", 'info');
+                    showBridges();
+                }
+            });
+        }
+    </script>
 
 </body>
 
