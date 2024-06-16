@@ -25,5 +25,8 @@
   },
   "0.21.0": {
     "en": "removed: deprecated connection methods to the CCU"
+  },
+  "0.22.0": {
+    "en": "update: css styling used in settings.html"
   }
 }
