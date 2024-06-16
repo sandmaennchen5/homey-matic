@@ -19,5 +19,11 @@
   },
   "0.20.0": {
     "en": "migration with bugfixes from Homematic v0.19.1"
+  },
+  "0.20.1": {
+    "en": "fix: show CCU IP adress upon CCU selection dialogue"
+  },
+  "0.21.0": {
+    "en": "removed: deprecated connection methods to the CCU"
   }
 }
