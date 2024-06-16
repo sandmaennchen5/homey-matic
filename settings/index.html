@@ -10,39 +10,8 @@
 
 <body>
 
-<h1 data-i18n="settings.title">
-    <!--
-        This field will automatically be filled by a translated string with key 'settings.title'.
-        Read more about translations at Internationalization.
-        -->
-</h1>
-<p data-i18n="settings.subtitle">
-    <!--
-        This field will also be translated
-        -->
-</p>
-
-<fieldset>
-    <legend>Select connection type</legend>
-
-    <select id="connection_type">
-        <option value="use_rpc">XMLRPC</option>
-        <option value="use_mqtt">MQTT</option>
-        <option value="use_ccu_jack">CCU Jack</option>
-    </select>
-</fieldset>
-
-<fieldset id="xmlrpc_settings">
-    <p style="color:red" data-i18n="settings.xmlrpc.deprecation_warning"> </p>
-</fieldset>
-
-<fieldset id="mqtt_settings">
-    <legend>MQTT Settings</legend>
-
-    <p style="color:red" data-i18n="settings.mqtt.deprecation_warning"> </p>
-    <p data-i18n="settings.mqtt.description"></p>
-
-</fieldset>
+<h1 data-i18n="settings.title"></h1>
+<p data-i18n="settings.subtitle"></p>
 
 <fieldset id="ccu_jack_settings">
     <legend>CCU Jack Settings</legend>
@@ -62,73 +31,41 @@
 
 <fieldset>
     <legend>Discovery Settings</legend>
-
     <p data-i18n="settings.discovery.description"></p>
-
     <div class="field row">
         <input id="use_stored_bridges" type="checkbox"/>
         <label for="use_stored_bridges" data-i18n="settings.discovery.use_stored_bridges"></label>
     </div>
-
 </fieldset>
 
 <button id="save" class="right">Save changes</button>
 
 <p data-i18n="settings.log.title"></p>
-<button class="right" id="button_getlog" onclick="showLogLines()" data-i18n="settings.log.button.getlogs">Get Logs
-</button>
+<button class="right" id="button_getlog" onclick="showLogLines()" data-i18n="settings.log.button.getlogs">Get Logs</button>
 <div id="loglines"></div>
 
 <button class="right" id="button_getBridges" onclick="showBridges()" data-i18n="settings.log.button.showBridges">Show
-    Stored Bridges
-</button>
+    Stored Bridges</button>
 <div id="bridges"></div>
 
 <button class="right" id="button_deleteBridges" onclick="deleteBridges()" data-i18n="settings.log.button.deleteBridges">Delete Stored Bridges
 </button>
 
 <script type="text/javascript">
-
-    const conn_type_rpc = 'use_rpc';
-    const conn_type_mqtt = 'use_mqtt';
-    const conn_type_ccu_jack = 'use_ccu_jack';
-
-    var xmlrpcSettingsElement = document.getElementById('xmlrpc_settings');
-    var mqttSettingsElement = document.getElementById('mqtt_settings');
     var ccuJackSettingsElement = document.getElementById('ccu_jack_settings');
-    var connectionTypeElement = document.getElementById('connection_type');
     var useStoredBridges = document.getElementById('use_stored_bridges');
     var saveElement = document.getElementById('save');
-    var ccuJackUserElement = document.getElementById('ccu_jack_user')
-    var ccuJackPasswordElement = document.getElementById('ccu_jack_password')
-    var ccuJackMQTTPortElement = document.getElementById('ccu_jack_mqtt_port')
+    var ccuJackUserElement = document.getElementById('ccu_jack_user');
+    var ccuJackPasswordElement = document.getElementById('ccu_jack_password');
+    var ccuJackMQTTPortElement = document.getElementById('ccu_jack_mqtt_port');
 
-    // a method named 'onHomeyReady' must be present in your code
     function onHomeyReady(Homey) {
-
         HomeyAPI = Homey;
-
-        Homey.get('connection_type', function (err, connection_type) {
-            if (err) return Homey.alert(err);
-            if (typeof connection_type == 'undefined' || connection_type == null) {
-                connectionTypeElement.value = "use_rpc";
-                Homey.get('use_mqtt', function (err, use_mqtt) {
-                    if (err) return;
-                    if (use_mqtt === true) {
-                        connectionTypeElement.value = 'use_mqtt'
-                        setSettingsVisibility()
-                    }
-                });
-                return
-            }
-            connectionTypeElement.value = connection_type;
-            setSettingsVisibility()
-        });
 
         Homey.get('ccu_jack_mqtt_port', function (err, ccu_jack_mqtt_port) {
             if (err) return Homey.alert(err);
             if (typeof ccu_jack_mqtt_port == 'undefined' || ccu_jack_mqtt_port == null) {
-                return
+                return;
             }
             ccuJackMQTTPortElement.value = ccu_jack_mqtt_port;
         });
@@ -137,7 +74,7 @@
             if (err) return Homey.alert(err);
             if (typeof ccu_jack_user == 'undefined' || ccu_jack_user == null) {
                 ccuJackUserElement.value = "";
-                return
+                return;
             }
             ccuJackUserElement.value = ccu_jack_user;
         });
@@ -146,7 +83,7 @@
             if (err) return Homey.alert(err);
             if (typeof ccu_jack_password == 'undefined' || ccu_jack_password == null) {
                 ccuJackPasswordElement.value = "";
-                return
+                return;
             }
             ccuJackPasswordElement.value = ccu_jack_password;
         });
@@ -158,19 +95,11 @@
             useStoredBridges.checked = use_stored_bridges;
         });
 
-        connectionTypeElement.addEventListener('change', function(e) {
-            setSettingsVisibility()
-        })
-
         saveElement.addEventListener('click', function (e) {
-            let errMsg = validateSettings(connectionTypeElement.value)
+            let errMsg = validateSettings();
             if (errMsg !== undefined) {
-                return Homey.alert(errMsg, 'error')
+                return Homey.alert(errMsg, 'error');
             }
-
-            Homey.set('connection_type', connectionTypeElement.value, function (err) {
-                if (err) return Homey.alert(err);
-            });
 
             Homey.set('ccu_jack_mqtt_port', Number(ccuJackMQTTPortElement.value), function (err) {
                 if (err) return Homey.alert(err);
@@ -199,30 +128,22 @@
                 if (err) return Homey.alert(err);
             });
 
-            Homey.alert('Settings saved', 'info')
+            Homey.alert('Settings saved', 'info');
         });
 
         // Tell Homey we're ready to be displayed
         Homey.ready();
     }
 
-    function validateSettings(conn_type) {
-        switch (conn_type) {
-            case conn_type_rpc:
-                return
-            case conn_type_mqtt:
-                return
-            case conn_type_ccu_jack:
-                if ((ccuJackUserElement.value !== "" && ccuJackPasswordElement.value === "" ) || (ccuJackUserElement.value === "" && ccuJackPasswordElement.value !== "" )) {
-                    return "User and Password must be both set to enable authenticaton or both be empty to disable authentication"
-                }
-                if (ccuJackMQTTPortElement.value === "") {
-                    return "MQTT Port cannot be empty"
-                }
-                if (!isPositiveInteger(ccuJackMQTTPortElement.value)) {
-                    return "MQTT Port must be a positive integer value"
-                }
-                return
+    function validateSettings() {
+        if ((ccuJackUserElement.value !== "" && ccuJackPasswordElement.value === "") || (ccuJackUserElement.value === "" && ccuJackPasswordElement.value !== "")) {
+            return "User and Password must be both set to enable authentication or both be empty to disable authentication";
+        }
+        if (ccuJackMQTTPortElement.value === "") {
+            return "MQTT Port cannot be empty";
+        }
+        if (!isPositiveInteger(ccuJackMQTTPortElement.value)) {
+            return "MQTT Port must be a positive integer value";
         }
     }
 
@@ -231,31 +152,6 @@
         return n !== Infinity && String(n) === str && n >= 0;
     }
 
-    function setSettingsVisibility() {
-        switch (connectionTypeElement.value) {
-            case 'use_rpc':
-                ccuJackSettingsElement.style.display = 'none'
-                mqttSettingsElement.style.display = 'none'
-                xmlrpcSettingsElement.style.display = 'block'
-                break
-            case 'use_ccu_jack':
-                ccuJackSettingsElement.style.display = 'block'
-                mqttSettingsElement.style.display = 'none'
-                xmlrpcSettingsElement.style.display = 'none'
-                break
-            case 'use_mqtt':
-                ccuJackSettingsElement.style.display = 'none'
-                mqttSettingsElement.style.display = 'block'
-                xmlrpcSettingsElement.style.display = 'none'
-                break
-
-            default:
-                ccuJackSettingsElement.style.display = 'none'
-                mqttSettingsElement.style.display = 'none'
-                xmlrpcSettingsElement.style.display = 'block'
-                break
-        }
-    }
     function showLogLines() {
         HomeyAPI.api('GET', 'log/getloglines/', function (err, result) {
             if (!err) {
@@ -265,7 +161,6 @@
                     document.getElementById('loglines').innerHTML += "<br />";
                 }
             }
-            ;
         });
     }
 
@@ -288,13 +183,11 @@
     function deleteBridges() {
         HomeyAPI.api('GET', 'bridges/delete/', function (err, result) {
             if (!err) {
-                HomeyAPI.alert("Bridges deleted", 'info')
-                showBridges()
+                HomeyAPI.alert("Bridges deleted", 'info');
+                showBridges();
             }
         });
     }
-
-
 </script>
 
 </body>
