@@ -1,42 +1,52 @@
-***** This app is still in Beta *****
+# Homematic CCU3
 
-Homematic 2024
-This app adds support for Homematic device in Homey via the CCU2/CCU3/RaspberryMatic.
-Homematic 2024 is an actively maintained version of the Homematic app, originally created by Timo Wendt.
+This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the Homematic app, originally created by Timo Wendt.
 
-What works:
+## Important Update
 
-Devices can be connected via the following interfaces to the CCU:
+Starting from version 0.20.0, only CCU Jack is supported as the connection method. This decision was made because CCU Jack is the most simplistic and reliable option. All prior connection methods, including BidCos, Homematic IP, CUxD, and MQTT, are no longer supported by the app. This is a breaking change.
 
-BidCos
-Homematic IP
-CUxD
-MQTT
+## CCU Jack Setup
 
-As of 0.15.0 the app also supports the connection to the CCU via MQTT. This feature is currently cosidered experimental. The reason it is considered experimental is that it might be required to make some changes on the CCU in future versions of the app which could cause the app not to work until the changes are implemented.
+### Introduction
 
-It depends on RedMatic (Node Red) and Mosquitto (MQTT broker) to be configured on the CCU and therefore only supports the CCU3 ud RaspberryMatic.
+CCU Jack is a great AddOn written in Go that can be installed on the CCU. It connects locally to the CCU XMLRPC API and provides the data via Rest and MQTT. The MQTT server is already integrated into the process itself. This replaces the Mosquitto AddOn and also the need to install Node Red for the connection from the Homey App.
 
-The implementation is fully compatible with the existing devices that have been paired before it was enabled. It is also possible to switch back to the old mode without requiring to pair devices again.
+CCU Jack is also the only way to use authentication for accessing the CCU from the Homey Homematic App.
 
-MQTT is more stable than the connection via RPC as used otherwise. It also fixes the issue that some users have been experiencing where the devices stopped working after some time and a restart of the app was required to fix it. The performance is also increased which means that switch operations as executed faster and more reliable.
+### Setup Instructions for your CCU3
 
-See the Wiki for a detailed description on setting it up.
+1. **Uninstall Existing MQTT AddOns**:
+   - If you already have the Mosquitto AddOn or any other MQTT AddOn installed, you either have to uninstall that or change the MQTT Port and PortTLS of CCU Jack in `/usr/local/addons/ccu-jack/ccu-jack.cfg`. Otherwise, CCU Jack will not start as the ports are already allocated by Mosquitto.
 
-I recommend not to enable the auto update of this app in Homey and always check this page to make sure that no action is required before updating the app.
+2. **Install CCU Jack**:
+   - Follow the [installation process of CCU Jack on the CCU](https://github.com/LRuesink-WebArray/homey-matic/wiki/CCU-Jack-Setup#introduction).
 
-If you encounter any issues then please open an issue on GitHub.
+3. **Configure CCU Jack**:
+   - If CUxD support is required, add `CUxD` to the list of interfaces in the config file at `/usr/local/addons/ccu-jack/ccu-jack.cfg` and restart the CCU Jack AddOn.
 
-If you have a device that is not supported currently then please open an issue on github and we will look into it.
+4. **Homey App Configuration**:
+   - Set the MQTT port in the settings of the Homey Homematic App to match the port configured in the CCU Jack configuration file.
 
-The app uses discovery to find your CCUs on the network. We were only able to test it with a single CCU yet. Therefore it is possible that the app fails in case multiple CCUs are discovered on the network.
+## Reporting Issues
 
-Credits
+- **GitHub Issues**:
+  - If you encounter any issues, please open an issue on GitHub.
+
+- **Unsupported Devices**:
+  - If you have a device that is not currently supported, please open an issue on GitHub.
+
+## Discovery
+
+The app uses discovery to find your CCUs on the network. I was only able to test it with a single CCU. Therefore, it is possible that the app fails if multiple CCUs are discovered on the network.
+
+## Credits
 
 I would like to express my deep gratitude to the original creators and contributors of the Homematic app:
+
 - Timo Wendt
 - Bjoern Welker
 - Lex Ruesink
 - Simon Wenner
 
-Thank you @hobbyquaker for your great work on binrpc, xmlrpc, hm-discover and RedMatic.
+Thank you @hobbyquaker for your great work on binrpc, xmlrpc, hm-discover, and RedMatic.

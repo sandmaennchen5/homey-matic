@@ -9925,7 +9925,7 @@
     }
   ],
   "flow": {
-    "triggers": [
+    "s": [
       {
         "id": "HM-OU-LED16-press",
         "title": {
