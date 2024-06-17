@@ -28,5 +28,8 @@
   },
   "0.22.0": {
     "en": "update: css styling used in settings.html"
+  },
+  "0.22.1": {
+    "en": "improved: lay-out of settings.html"
   }
 }
