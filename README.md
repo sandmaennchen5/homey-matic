@@ -20,7 +20,7 @@ CCU Jack is also the only way to use authentication for accessing the CCU from t
    - If you already have the Mosquitto AddOn or any other MQTT AddOn installed, you either have to uninstall that or change the MQTT Port and PortTLS of CCU Jack in `/usr/local/addons/ccu-jack/ccu-jack.cfg`. Otherwise, CCU Jack will not start as the ports are already allocated by Mosquitto.
 
 2. **Install CCU Jack**:
-   - Follow the [installation process of CCU Jack on the CCU](https://github.com/LRuesink-WebArray/homey-matic.wiki.git).
+   - Follow the [installation process of CCU Jack on the CCU](https://github.com/mdzio/ccu-jack).
 
 3. **Configure CCU Jack**:
    - If CUxD support is required, add `CUxD` to the list of interfaces in the config file at `/usr/local/addons/ccu-jack/ccu-jack.cfg` and restart the CCU Jack AddOn.
