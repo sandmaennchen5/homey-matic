@@ -1,13 +1,13 @@
 {
   "id": "com.baumus.homey.matic",
-  "version": "0.22.1",
+  "version": "0.22.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Homematic 2024"
+    "en": "Homematic CCU3"
   },
   "description": {
-    "en": "Connect Homematic with Homey"
+    "en": "Connect Homematic CCU3 with Homey"
   },
   "category": [
     "tools",
