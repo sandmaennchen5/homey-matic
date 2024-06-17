@@ -1,39 +1,44 @@
-# Homey-Matic 2024
+# Homematic CCU3
 
-This is the actively maintained version of the Homey-Matic app, originally created by LRuesink-WebArray. This version includes support for new devices and additional features.
+This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the Homematic app, originally created by Timo Wendt.
 
-## New Features
-- Support for HmIP-SWO-B
+## Important Update
 
-## Overview
+Starting from version 0.20.0, only CCU Jack is supported as the connection method. This decision was made because CCU Jack is the most simplistic and reliable option. All prior connection methods, including BidCos, Homematic IP, CUxD, and MQTT, are no longer supported by the app. This is a breaking change.
 
-This app adds support for Homematic devices in Homey via the CCU2/CCU3/RaspberryMatic.
+## CCU Jack Setup
 
-### Supported Interfaces
-Devices can be connected to the CCU via the following interfaces:
-* BidCos
-* Homematic IP
-* CUxD
+### Introduction
 
-## MQTT Support
+CCU Jack is a great AddOn written in Go that can be installed on the CCU. It connects locally to the CCU XMLRPC API and provides the data via Rest and MQTT. The MQTT server is already integrated into the process itself. This replaces the Mosquitto AddOn and also the need to install Node Red for the connection from the Homey App.
 
-As of version 0.15.0, the app supports connection to the CCU via MQTT. This feature is currently considered experimental, as future updates to the CCU might require changes to the app, potentially causing it to stop working until those changes are implemented.
+CCU Jack is also the only way to use authentication for accessing the CCU from the Homey Homematic App.
 
-The MQTT functionality depends on RedMatic (Node-RED) and Mosquitto (MQTT broker) being configured on the CCU, and therefore only supports CCU3 and RaspberryMatic.
+### Setup Instructions for your CCU3
 
-### Benefits of MQTT
-- More stable than the RPC connection used otherwise.
-- Fixes issues where devices stopped working after some time, requiring a restart of the app.
-- Improved performance, making switch operations faster and more reliable.
+1. **Uninstall Existing MQTT AddOns**:
+   - If you already have the Mosquitto AddOn or any other MQTT AddOn installed, you either have to uninstall that or change the MQTT Port and PortTLS of CCU Jack in `/usr/local/addons/ccu-jack/ccu-jack.cfg`. Otherwise, CCU Jack will not start as the ports are already allocated by Mosquitto.
 
-For a detailed setup guide, see the [Wiki](https://github.com/twendt/homey-matic/wiki/MQTT-Setup).
+2. **Install CCU Jack**:
+   - Follow the [installation process of CCU Jack on the CCU](https://github.com/LRuesink-WebArray/homey-matic/wiki/CCU-Jack-Setup#introduction).
 
-## Important Notices
-- It is recommended to disable auto-update for this app in Homey and always check this page to ensure no action is required before updating.
-- If you encounter any issues, please open an issue on GitHub.
-- If your device is not supported, please open an issue on GitHub and we will look into it.
+3. **Configure CCU Jack**:
+   - If CUxD support is required, add `CUxD` to the list of interfaces in the config file at `/usr/local/addons/ccu-jack/ccu-jack.cfg` and restart the CCU Jack AddOn.
 
-The app uses discovery to find your CCUs on the network. It has been tested with a single CCU, so it might fail if multiple CCUs are discovered on the network.
+4. **Homey App Configuration**:
+   - Set the MQTT port in the settings of the Homey Homematic App to match the port configured in the CCU Jack configuration file.
+
+## Reporting Issues
+
+- **GitHub Issues**:
+  - If you encounter any issues, please open an issue on GitHub.
+
+- **Unsupported Devices**:
+  - If you have a device that is not currently supported, please open an issue on GitHub.
+
+## Discovery
+
+The app uses discovery to find your CCUs on the network. I was only able to test it with a single CCU. Therefore, it is possible that the app fails if multiple CCUs are discovered on the network.
 
 ## Supported Devices
 
