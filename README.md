@@ -1,6 +1,6 @@
 # Homematic CCU3
 
-This app adds support for Homematic devices in Homey via the CCU3. Homematic CCU3 is an actively maintained version of the Homematic app, originally created by Timo Wendt.
+This app adds support for Homematic devices in Homey via the CCU3. Homematic CCU3 is an actively maintained version of the Homematic app, originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner.
 
 ## Important Update
 
