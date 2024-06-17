@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twendt/homey-matic.git"
+    "url": "git+https://github.com/Baumus/homey-matic.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/twendt/homey-matic/issues"
+    "url": "https://github.com/Baumus/homey-matic/issues"
   },
-  "homepage": "https://github.com/twendt/homey-matic#readme"
+  "homepage": "https://github.com/Baumus/homey-matic#readme"
 }
