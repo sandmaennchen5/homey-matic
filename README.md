@@ -2,7 +2,7 @@
 
 This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the [Homematic app](https://github.com/LRuesink-WebArray/homey-matic), originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner. This app is not provided by, endorsed by, supported by, or affiliated with eQ-3 AG in any way.
 
-Any help from the community through e.g. pull requests would be highly appreciated.
+Any help from the community through e.g. pull requests is highly appreciated.
 
 ## Important Update
 
