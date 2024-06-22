@@ -5,10 +5,10 @@
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Homematic CCU3"
+    "en": "Homematic 2024"
   },
   "description": {
-    "en": "Connect Homematic CCU3 with Homey"
+    "en": "Connect Homematic 2024 with Homey"
   },
   "category": [
     "tools",
