@@ -7,7 +7,7 @@
     "en": "Homematic 2024"
   },
   "description": {
-    "en": "Connect Homematic 2024 with Homey"
+    "en": "Connect Homematic CCU3 with Homey"
   },
   "category": [
     "tools",
@@ -25,6 +25,13 @@
   "author": {
     "name": "Robin Baum"
   },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "RobinBaum"
+      }
+    }
+  },
   "contributors": {
     "developers": [
       {
@@ -41,6 +48,10 @@
       }
     ]
   },
+  "bugs": {
+    "url": "https://github.com/Baumus/homey-matic/issues"
+  },
+  "source": "https://github.com/Baumus/homey-matic",
   "api": {
     "getLogLines": {
       "method": "GET",

@@ -1,6 +1,6 @@
-# Contributing to Homey-Matic
+# Contributing to Homematic 2024
 
-Thank you for your interest in contributing to Homey-Matic! By contributing, you can help improve the app and make it more useful for everyone. Please follow these guidelines to ensure a smooth contribution process.
+Thank you for your interest in contributing to Homematic 2024! By contributing, you can help improve the app and make it more useful for everyone. Please follow these guidelines to ensure a smooth contribution process.
 
 ## How to Contribute
 
@@ -61,4 +61,4 @@ If you have an idea for a new feature, please create an issue on GitHub. Describ
 - Be open to feedback and willing to make necessary changes.
 
 
-Thank you for contributing to Homey-Matic! Your efforts are greatly appreciated and help make the project better for everyone.
+Thank you for contributing to Homematic 2024! Your efforts are greatly appreciated and help make the project better for everyone.
