@@ -1,10 +1,12 @@
 # Homematic 2024
 
-This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the Homematic app, originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner.
+This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the [Homematic app](https://github.com/LRuesink-WebArray/homey-matic), originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner. This app is not provided by, endorsed by, supported by, or affiliated with eQ-3 AG in any way.
+
+Any help from the community through e.g. pull requests would be highly appreciated.
 
 ## Important Update
 
-Starting from version 0.20.0, only CCU Jack is supported as the connection method. This decision was made because CCU Jack is the most simplistic and reliable option. All prior connection methods, including BidCos, Homematic IP, CUxD, and MQTT, are no longer supported by the app. This is a breaking change.
+Starting from version 0.20.0, only CCU Jack is supported as the connection method. This decision was made because CCU Jack is the most simplistic and reliable option. This is a breaking change.
 
 ## CCU Jack Setup
 
@@ -159,6 +161,7 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HmIP-SWD
 * HmIP-SWDM
 * HmIP-SWDO-I
+* HmIP-SWO-B
 * HmIP-SWO-PR
 * HmIP-SWSD
 * HmIP-WRC6
