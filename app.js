@@ -34,11 +34,17 @@ class Homematic extends Homey.App {
 
     async onUninit() {
         this.logger.log('info', 'Unloading homematic app...');
-        Object.keys(this.bridges).forEach(serial => {
+
+        const cleanupPromises = Object.keys(this.bridges).map(serial => {
             if (this.bridges[serial].cleanup) {
                 this.bridges[serial].cleanup();
             }
         });
+
+        // Wait for all cleanup operations to finish
+        await Promise.all(cleanupPromises);
+
+        this.logger.log('info', 'All bridges cleaned up.');
     }
 
     getSettings() {
