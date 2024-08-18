@@ -37,7 +37,7 @@ class Homematic extends Homey.App {
 
         const cleanupPromises = Object.keys(this.bridges).map(serial => {
             if (this.bridges[serial].cleanup) {
-                this.bridges[serial].cleanup();
+                return this.bridges[serial].cleanup();
             }
         });
 
