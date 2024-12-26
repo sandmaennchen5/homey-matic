@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.baumus.homey.matic",
-  "version": "0.23.0",
+  "version": "0.24.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -7291,6 +7291,286 @@
                 "en": "CCU Serial"
               },
               "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HmIP-MIOB",
+      "name": {
+        "en": "HmIP-MIOB"
+      },
+      "class": "socket",
+      "capabilities": [],
+      "capabilitiesOptions": {
+        "onoff.channel2": {
+          "title": "Schalter Kanal 2"
+        },
+        "onoff.channel3": {
+          "title": "Schalter Kanal 3"
+        },
+        "onoff.channel4": {
+          "title": "Schalter Kanal 4"
+        },
+        "onoff.channel6": {
+          "title": "Schalter Kanal 6"
+        },
+        "onoff.channel7": {
+          "title": "Schalter Kanal 7"
+        },
+        "onoff.channel8": {
+          "title": "Schalter Kanal 8"
+        },
+        "dim": {
+          "title": "Regler"
+        }
+      },
+      "images": {
+        "large": "/drivers/HmIP-MIOB/assets/images/large.png",
+        "small": "/drivers/HmIP-MIOB/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_bridges",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device data"
+          },
+          "children": [
+            {
+              "id": "app",
+              "type": "label",
+              "label": {
+                "en": "App"
+              },
+              "value": "Homematic"
+            },
+            {
+              "id": "driver",
+              "type": "label",
+              "label": {
+                "en": "Driver"
+              },
+              "value": "",
+              "hint": {
+                "en": "In most cases the driver name is the same as the device type, but some drivers support multiple device types. In those cases they might not match."
+              }
+            },
+            {
+              "id": "address",
+              "type": "label",
+              "label": {
+                "en": "Device Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuIP",
+              "type": "label",
+              "label": {
+                "en": "CCU IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuSerial",
+              "type": "text",
+              "label": {
+                "en": "CCU Serial"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device settings"
+          },
+          "children": [
+            {
+              "id": "ShowButtonChannel2",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 2"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel2",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 2"
+              },
+              "value": "Schalter Kanal 2"
+            },
+            {
+              "id": "ShowButtonChannel3",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 3"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel3",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 3"
+              },
+              "value": "Schalter Kanal 3"
+            },
+            {
+              "id": "ShowButtonChannel4",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 4"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel4",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 4"
+              },
+              "value": "Schalter Kanal 4"
+            },
+            {
+              "id": "ShowButtonChannel6",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 6"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel6",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 6"
+              },
+              "value": "Schalter Kanal 6"
+            },
+            {
+              "id": "ShowButtonChannel7",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 7"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel7",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 7"
+              },
+              "value": "Schalter Kanal 7"
+            },
+            {
+              "id": "ShowButtonChannel8",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Button Channel 8"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleButtonChannel8",
+              "type": "text",
+              "label": {
+                "en": "Title Button Channel 8"
+              },
+              "value": "Schalter Kanal 8"
+            },
+            {
+              "id": "ShowDimmer",
+              "type": "checkbox",
+              "label": {
+                "en": "Show Dimmer"
+              },
+              "value": true
+            },
+            {
+              "id": "TitleDimmer",
+              "type": "text",
+              "label": {
+                "en": "Title Dimmer"
+              },
+              "value": "Regler"
+            },
+            {
+              "id": "QuickActionChannel",
+              "type": "dropdown",
+              "label": {
+                "en": "Quick Action Channel"
+              },
+              "hint": {
+                "en": "Select which channel should have the Quick Action button."
+              },
+              "value": "onoff.channel2",
+              "values": [
+                {
+                  "id": "onoff.channel2",
+                  "label": {
+                    "en": "Channel 2"
+                  }
+                },
+                {
+                  "id": "onoff.channel3",
+                  "label": {
+                    "en": "Channel 3"
+                  }
+                },
+                {
+                  "id": "onoff.channel4",
+                  "label": {
+                    "en": "Channel 4"
+                  }
+                },
+                {
+                  "id": "onoff.channel6",
+                  "label": {
+                    "en": "Channel 6"
+                  }
+                },
+                {
+                  "id": "onoff.channel7",
+                  "label": {
+                    "en": "Channel 7"
+                  }
+                },
+                {
+                  "id": "onoff.channel8",
+                  "label": {
+                    "en": "Channel 8"
+                  }
+                }
+              ]
             }
           ]
         }

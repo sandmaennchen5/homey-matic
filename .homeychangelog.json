@@ -40,5 +40,8 @@
   },
   "0.23.0": {
     "en": "optimized: async code execution"
+  },
+  "0.24.0": {
+    "en": "added: support for device HmIP-MIOB"
   }
 }
