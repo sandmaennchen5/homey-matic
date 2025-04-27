@@ -60,12 +60,12 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HM-LC-Sw1-Ba-PCB
 * HM-LC-Sw1-DR
 * HM-LC-Sw1-FM
+* HM-LC-Sw1PBU-FM
 * HM-LC-Sw1-Pl
 * HM-LC-Sw1-Pl-2
 * HM-LC-Sw1-Pl-CT-R1
 * HM-LC-Sw1-Pl-DN-R1
 * HM-LC-Sw1-Pl-DN-R5
-* HM-LC-Sw1PBU-FM
 * HM-LC-Sw2-FM
 * HM-LC-Sw2PBU-FM
 * HM-LC-Sw4-Ba-PCB
@@ -108,18 +108,12 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HM-Sen-RD-O
 * HM-SwI-3-FM
 * HM-TC-IT-WM-W-EU
-* HM-WDS10-TH-O
 * HM-WDS100-C6-O
+* HM-WDS10-TH-O
 * HM-WDS30-T-O
 * HM-WS550STH-I
 
 ### Homematic IP Devices
-* HMIP-PS
-* HMIP-PSM
-* HMIP-SWDO
-* HMIP-WRC2
-* HMIP-WTH
-* HMIP-eTRV
 * HmIP-ASIR
 * HmIP-ASIR-2
 * HmIP-BDT
@@ -130,8 +124,13 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HmIP-BWTH
 * HmIP-BWTH24
 * HmIP-DRSI1
-* HmIP-FCI1
+* HMIP-eTRV
+* HmIP-eTRV-2
+* HmIP-eTRV-B
+* HmIP-eTRV-C
++ HmIP-eTRV-C-2
 * HmIP-FBL
+* HmIP-FCI1
 * HmIP-FDT
 * HmIP-FROLL
 * HmIP-FSM
@@ -140,10 +139,12 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HmIP-MOD-OC8
 * HmIP-PCBS
 * HmIP-PCBS-BAT
+* HMIP-PS
 * HmIP-PS-CH
+* HMIP-PSM
+* HmIP-PSM-CH
 * HmIP-PS-PE
 * HmIP-PS-UK
-* HmIP-PSM-CH
 * HmIP-RC8
 * HmIP-SAM
 * HmIP-SCI
@@ -160,16 +161,16 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HmIP-STHO
 * HmIP-SWD
 * HmIP-SWDM
+* HMIP-SWDO
 * HmIP-SWDO-I
 * HmIP-SWO-B
 * HmIP-SWO-PR
 * HmIP-SWSD
+* HMIP-WRC2
 * HmIP-WRC6
+* HMIP-WTH
++ HmIP-WTH-1
 * HmIP-WTH-2
-* HmIP-eTRV-2
-* HmIP-eTRV-B
-* HmIP-eTRV-C
-* HmIP-eTRV-C-2
 
 ## Credits
 
