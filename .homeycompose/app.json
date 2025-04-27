@@ -1,6 +1,6 @@
 {
   "id": "com.sandmaennchen5.homey.matic",
-  "version": "0.24.2",
+  "version": "0.24.3",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
