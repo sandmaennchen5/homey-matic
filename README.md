@@ -172,6 +172,17 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 + HmIP-WTH-1
 * HmIP-WTH-2
 
++ HMIP-WTH-A
++ HmIP-BWTH-A
++ HMIP-WRC2-A
++ HmIP-STHO-A
++ HmIP-WRC6-A
++ HmIP-STHD-A
++ HMIP-SWDO-A
++ HmIP-SMI55-A
++ HmIP-STH-A
++ HmIP-BRA-A
+
 ## Credits
 
 I would like to express my deep gratitude to the original creators and contributors of the Homematic app:

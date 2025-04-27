@@ -12,7 +12,7 @@ class HomematicDriver extends Driver {
             'measure_luminance',
             'alarm_battery'
         ]
-        this.homematicTypes = ['HmIP-SMI55'];
+        this.homematicTypes = ['HmIP-SMI55', 'HmIP-SMI55-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
 
         this._flowTriggerButtonPressed = this.homey.flow.getDeviceTriggerCard('HmIP-SMI55-press')

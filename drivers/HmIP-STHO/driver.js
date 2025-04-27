@@ -10,7 +10,7 @@ class HomematicDriver extends Driver {
         this.capabilities = [
             'measure_temperature',
             'measure_humidity']
-        this.homematicTypes = ['HmIP-STHO'];
+        this.homematicTypes = ['HmIP-STHO', 'HmIP-STHO-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
     }
 

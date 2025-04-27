@@ -11,7 +11,7 @@ class HomematicDriver extends Driver {
             'alarm_contact',
             'alarm_battery'
         ]
-        this.homematicTypes = ['HMIP-SWDO'];
+        this.homematicTypes = ['HMIP-SWDO', 'HMIP-SWDO-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
     }
 

@@ -1,7 +1,7 @@
 {
     "id": "HMIP-WTH",
     "name": {
-        "en": "HMIP-WTH"
+        "en": "HMIP-WTH-*"
     },
     "class": "thermostat",
     "capabilities": [

@@ -49,5 +49,8 @@
   },
   "0.24.2": {
     "en": "Added: Support for HmIP-WTH-1"
+  },
+  "0.24.3": {
+    "en": "Added: Support for HMIP-WTH-A, HmIP-BWTH-A, HMIP-WRC2-A, HmIP-STHO-A, HmIP-WRC6-A, HmIP-STHD-A, HMIP-SWDO-A, HmIP-SMI55-A, HmIP-STH-A, HmIP-BRA-A"
   }
 }
