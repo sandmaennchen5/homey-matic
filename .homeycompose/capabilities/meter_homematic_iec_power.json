@@ -2,21 +2,16 @@
     "type": "number",
     "title": {
       "en": "IEC Power Meter",
-      "nl": "IEC Energiemeter",
-      "de": "IEC Energiezähler",
-      "fr": "IEC Compteur électrique",
-      "it": "IEC Misuratore di potenza"
+      "de": "IEC Energiezähler"
     },
     "units": {
-      "en": "W"
+      "en": "W",
+	  "de": "W"
     },
     "insights": true,
     "desc": {
       "en": "Power usage in KiloWattHour (kWh)",
-      "nl": "Stroomverbuik in KiloWattUur (kWh)",
-      "de": "Energieverbrauch in Kilowattstunde (kWh)",
-      "fr": "Consommation électrique en kilo Watt heure (kWh)",
-      "it": "Consumo di energia in chilowattora (kWh)"
+      "de": "Energieverbrauch in Kilowattstunde (kWh)"
     },
     "chartType": "stepLine",
     "decimals": 2,

@@ -1,6 +1,6 @@
-# Contributing to Homematic 2024
+# Contributing to Homematic (CCU-Jack)
 
-Thank you for your interest in contributing to Homematic 2024! By contributing, you can help improve the app and make it more useful for everyone. Please follow these guidelines to ensure a smooth contribution process.
+Thank you for your interest in contributing to Homematic (CCU-Jack)! By contributing, you can help improve the app and make it more useful for everyone. Please follow these guidelines to ensure a smooth contribution process.
 
 ## How to Contribute
 

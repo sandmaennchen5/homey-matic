@@ -1,6 +1,6 @@
-# Homematic 2024
+# Homematic (CCU-Jack)
 
-This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the [Homematic app](https://github.com/LRuesink-WebArray/homey-matic), originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner. This app is not provided by, endorsed by, supported by, or affiliated with eQ-3 AG in any way.
+This app adds support for Homematic devices in Homey via the CCU3. Homematic (CCU-Jack) is an actively maintained version of the [Homematic app](https://github.com/LRuesink-WebArray/homey-matic) / (https://github.com/Baumus/homey-matic), originally created by Timo Wendt, Bjoern Welker, Lex Ruesink, Simon Wenner and Baumus. This app is not provided by, endorsed by, supported by, or affiliated with eQ-3 AG in any way.
 
 Any help from the community through e.g. pull requests is highly appreciated.
 
@@ -169,6 +169,7 @@ The app uses discovery to find your CCUs on the network. I was only able to test
 * HmIP-eTRV-2
 * HmIP-eTRV-B
 * HmIP-eTRV-C
+* HmIP-eTRV-C-2
 
 ## Credits
 
@@ -177,5 +178,6 @@ I would like to express my deep gratitude to the original creators and contribut
 - Bjoern Welker
 - Lex Ruesink
 - Simon Wenner
+- Baumus
 
 Thank you [@hobbyquaker](https://github.com/hobbyquaker) for your great work on binrpc, xmlrpc, hm-discover and RedMatic.

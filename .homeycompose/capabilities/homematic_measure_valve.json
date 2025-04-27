@@ -8,7 +8,8 @@
     "setable": false,
     "insights": true,
     "units": {
-        "en": "%"
+        "en": "%",
+		"de": "%"
     },
     "min": 0,
     "max": 100,
