@@ -1,7 +1,8 @@
 {
     "type": "boolean",
     "title": {
-        "en": "Alarm off"
+        "en": "Alarm off",
+		"de": "Alarm Aus"
     },
     "uiComponent": "button",
     "getable": false,

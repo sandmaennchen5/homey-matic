@@ -2,16 +2,15 @@
     "type": "number",
     "title": {
       "en": "IEC Power",
-      "nl": "IEC Energie",
       "de": "IEC Energie"
     },
     "units": {
-      "en": "W"
+      "en": "W",
+	  "de": "W"
     },
     "insights": true,
     "desc": {
       "en": "Power in Watt",
-      "nl": "Vermogen in Watt",
       "de": "Energie in Watt"
     },
     "chartType": "stepLine",

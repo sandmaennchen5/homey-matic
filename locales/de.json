@@ -1,0 +1,29 @@
+{
+    "settings": {
+        "title": "Homematic",
+        "subtitle": "Setup Homematic CCU Verbindung",
+        "mqtt": {
+            "use_mqtt": "Benutze MQTT",
+            "deprecation_warning": "MQTT ist veraltet und wird in Zukunft zugunsten von CCU Jack entfernt",
+            "description": "Experimentell: MQTT ist eine Expertenfunktion, für die RedMatic und Mosquitto auf der CCU eingerichtet werden müssen. Wenn Sie diese Einstellung ändern, muss die App neu gestartet werden. Unter diesem Link finden Sie Anweisungen: https://github.com/twendt/homey-matic/wiki/MQTT-Setup",
+            "use_ccu_jack": "Benutze CCU Jack"
+        },
+        "ccu_jack": {
+            "use_ccu_jack": "Benutze CCU Jack",
+            "description": "CCU Jack ist derzeit experimentell, wird aber der einzige Verbindungstyp sein, der in zukünftigen Versionen verfügbar sein wird. Wenn Probleme auftreten, können Sie zu einem der anderen Verbindungstypen zurückkehren. Weitere Informationen finden Sie https://github.com/twendt/homey-matic/wiki/CCU-Jack-Setup"
+        },
+        "xmlrpc": {
+            "deprecation_warning": "XMLRPC ist veraltet und wird in Zukunft zugunsten der CCU-Jack entfernt"
+        },
+        "discovery": {
+            "use_stored_bridges": "Verwenden Sie gespeicherte CCUs (verwenden Sie diese nur bei Problemen mit der Erkennung)",
+            "description": "Einstellungen für die Ermittlung"
+        },
+        "log": {
+            "title": "Protokolle",
+            "button": {
+                "getLogs": "Hole Protokolle"
+            }
+        }
+    }
+}

@@ -4,30 +4,35 @@
         {
             "id": "0",
             "title": {
-                "en": "Off"
+                "en": "Off",
+				"de": "Aus"
             }
         },
         {
             "id": "1",
             "title": {
-                "en": "Red"
+                "en": "Red",
+				"de": "Rot"
             }
         },
         {
             "id": "2",
             "title": {
-                "en": "Green"
+                "en": "Green",
+				"de": "Grün"
             }
         },
         {
             "id": "3",
             "title": {
-                "en": "Orange"
+                "en": "Orange",
+				"de": "Orange"
             }
         }
     ],
     "title": {
-        "en": "LED Status"
+        "en": "LED Status",
+		"de": "LED Status"
     },
     "uiComponent": "picker",
     "getable": true,
