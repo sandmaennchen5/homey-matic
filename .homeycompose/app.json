@@ -1,0 +1,75 @@
+{
+  "id": "com.baumus.homey.matic",
+  "version": "0.24.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "name": {
+    "en": "Homematic 2024"
+  },
+  "description": {
+    "en": "Connect Homematic CCU3 with Homey"
+  },
+  "category": [
+    "tools",
+    "appliances"
+  ],
+  "permissions": [
+    "homey:app:nl.scanno.mqtt"
+  ],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "brandColor": "#192c6e",
+  "homeyCommunityTopicId": 1057,
+  "author": {
+    "name": "Robin Baum"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "RobinBaum"
+      }
+    }
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Timo Wendt"
+      },
+      {
+        "name": "Bjoern Welker"
+      },
+      {
+        "name": "Lex Ruesink"
+      },
+      {
+        "name": "Simon Wenner"
+      }
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/Baumus/homey-matic/issues"
+  },
+  "source": "https://github.com/Baumus/homey-matic",
+  "api": {
+    "getLogLines": {
+      "method": "GET",
+      "path": "/log/getloglines/",
+      "public": false
+    },
+    "getStoredBridges": {
+      "method": "GET",
+      "path": "/bridges/get/",
+      "public": false
+    },
+    "deleteStoredBridges": {
+      "method": "GET",
+      "path": "/bridges/delete/",
+      "public": false
+    }
+  },
+  "platforms": [
+    "local"
+  ]
+}
