@@ -1,17 +1,26 @@
 {
-    "actions": [
+    "triggers": [
         {
-            "id": "HMIP-eTRV-thermostat_set_weekprofile",
+            "id": "HM-RC-2-PBU-FM-press",
             "title": {
-                "en": "Set Week Profile"
+                "en": "Button Event"
             },
             "titleFormatted": {
-                "en": "Set Week Profile: [[weekprofile]]"
+                "en": "Button [[button]] [[pressType]] Event"
             },
+            "tokens": [
+                {
+                    "name": "button",
+                    "type": "number",
+                    "title": {
+                        "en": "Button"
+                    }
+                }
+            ],
             "args": [
                 {
-                    "name": "weekprofile",
-                    "title": "Week Profile",
+                    "name": "button",
+                    "title": "Button",
                     "type": "dropdown",
                     "values": [
                         {
@@ -25,47 +34,29 @@
                             "label": {
                                 "en": "2"
                             }
-                        },
-                        {
-                            "id": "3",
-                            "label": {
-                                "en": "3"
-                            }
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "id": "HMIP-eTRV-thermostat_set_mode",
-            "title": {
-                "en": "Set Mode"
-            },
-            "titleFormatted": {
-                "en": "Set Mode: [[mode]]"
-            },
-            "args": [
+                },
                 {
-                    "name": "mode",
-                    "title": "Mode",
+                    "name": "pressType",
+                    "title": "Press Type",
                     "type": "dropdown",
                     "values": [
                         {
-                            "id": "0",
+                            "id": "short",
                             "label": {
-                                "en": "Auto"
+                                "en": "Short"
                             }
                         },
                         {
-                            "id": "1",
+                            "id": "long",
                             "label": {
-                                "en": "Manu"
+                                "en": "Long"
                             }
                         }
                     ]
                 }
             ]
         }
-
     ]
 }

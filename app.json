@@ -65,6 +65,12 @@
         "homematic_measure_valve",
         "alarm_battery"
       ],
+      "energy": {
+        "batteries": [
+          "AA",
+          "AA"
+        ]
+      },
       "mobile": {
         "components": [
           {
@@ -2828,6 +2834,94 @@
       ]
     },
     {
+      "id": "HM-RC-2-PBU-FM",
+      "name": {
+        "en": "HM-RC-2-PBU-FM"
+      },
+      "class": "button",
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/HM-RC-2-PBU-FM/assets/images/large.png",
+        "small": "/drivers/HM-RC-2-PBU-FM/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_bridges",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device data"
+          },
+          "children": [
+            {
+              "id": "app",
+              "type": "label",
+              "label": {
+                "en": "App"
+              },
+              "value": "Homematic"
+            },
+            {
+              "id": "driver",
+              "type": "label",
+              "label": {
+                "en": "Driver"
+              },
+              "value": "",
+              "hint": {
+                "en": "In most cases the driver name is the same as the device type, but some drivers support multiple device types. In those cases they might not match."
+              }
+            },
+            {
+              "id": "address",
+              "type": "label",
+              "label": {
+                "en": "Device Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuIP",
+              "type": "label",
+              "label": {
+                "en": "CCU IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuSerial",
+              "type": "text",
+              "label": {
+                "en": "CCU Serial"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "HM-RC-4",
       "name": {
         "en": "HM-RC-4"
@@ -4872,6 +4966,12 @@
         "alarm_battery",
         "measure_humidity"
       ],
+      "energy": {
+        "batteries": [
+          "AAA",
+          "AAA"
+        ]
+      },
       "mobile": {
         "components": [
           {
@@ -6738,6 +6838,94 @@
       "images": {
         "large": "/drivers/HmIP-FBL/assets/images/large.png",
         "small": "/drivers/HmIP-FBL/assets/images/small.png"
+      },
+      "pair": [
+        {
+          "id": "list_bridges",
+          "template": "list_devices",
+          "options": {
+            "singular": true
+          },
+          "navigation": {
+            "next": "list_devices"
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device data"
+          },
+          "children": [
+            {
+              "id": "app",
+              "type": "label",
+              "label": {
+                "en": "App"
+              },
+              "value": "Homematic"
+            },
+            {
+              "id": "driver",
+              "type": "label",
+              "label": {
+                "en": "Driver"
+              },
+              "value": "",
+              "hint": {
+                "en": "In most cases the driver name is the same as the device type, but some drivers support multiple device types. In those cases they might not match."
+              }
+            },
+            {
+              "id": "address",
+              "type": "label",
+              "label": {
+                "en": "Device Address"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuIP",
+              "type": "label",
+              "label": {
+                "en": "CCU IP"
+              },
+              "value": ""
+            },
+            {
+              "id": "ccuSerial",
+              "type": "text",
+              "label": {
+                "en": "CCU Serial"
+              },
+              "value": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "HmIP-FCI1",
+      "name": {
+        "en": "HmIP-FCI1"
+      },
+      "class": "button",
+      "capabilities": [],
+      "images": {
+        "large": "/drivers/HmIP-FCI1/assets/images/large.png",
+        "small": "/drivers/HmIP-FCI1/assets/images/small.png"
       },
       "pair": [
         {
@@ -10089,6 +10277,69 @@
         ]
       },
       {
+        "id": "HM-RC-2-PBU-FM-press",
+        "title": {
+          "en": "Button Event"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] [[pressType]] Event"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=HM-RC-2-PBU-FM"
+          },
+          {
+            "name": "button",
+            "title": "Button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "2",
+                "label": {
+                  "en": "2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "pressType",
+            "title": "Press Type",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "short",
+                "label": {
+                  "en": "Short"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "Long"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "HM-RC-4-press",
         "title": {
           "en": "Button Event"
@@ -11343,6 +11594,63 @@
         ]
       },
       {
+        "id": "HmIP-FCI1-press",
+        "title": {
+          "en": "Button Event"
+        },
+        "titleFormatted": {
+          "en": "Button [[button]] [[pressType]] Event"
+        },
+        "tokens": [
+          {
+            "name": "button",
+            "type": "number",
+            "title": {
+              "en": "Button"
+            }
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=HmIP-FCI1"
+          },
+          {
+            "name": "button",
+            "title": "Button",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "label": {
+                  "en": "1"
+                }
+              }
+            ]
+          },
+          {
+            "name": "pressType",
+            "title": "Press Type",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "short",
+                "label": {
+                  "en": "Short"
+                }
+              },
+              {
+                "id": "long",
+                "label": {
+                  "en": "Long"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
         "id": "HmIP-FROLL-press",
         "title": {
           "en": "Button Event"
@@ -11933,7 +12241,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_weekprofile",
+        "id": "HMIP-eTRV-thermostat_set_weekprofile",
         "title": {
           "en": "Set Week Profile"
         },
@@ -11974,7 +12282,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_mode",
+        "id": "HMIP-eTRV-thermostat_set_mode",
         "title": {
           "en": "Set Mode"
         },
@@ -12023,7 +12331,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_weekprofile",
+        "id": "HmIP-eTRV-2-thermostat_set_weekprofile",
         "title": {
           "en": "Set Week Profile"
         },
@@ -12064,7 +12372,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_mode",
+        "id": "HmIP-eTRV-2-thermostat_set_mode",
         "title": {
           "en": "Set Mode"
         },
@@ -12099,7 +12407,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_weekprofile",
+        "id": "HmIP-eTRV-B-thermostat_set_weekprofile",
         "title": {
           "en": "Set Week Profile"
         },
@@ -12140,7 +12448,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_mode",
+        "id": "HmIP-eTRV-B-thermostat_set_mode",
         "title": {
           "en": "Set Mode"
         },
@@ -12175,7 +12483,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_weekprofile",
+        "id": "HmIP-eTRV-C-thermostat_set_weekprofile",
         "title": {
           "en": "Set Week Profile"
         },
@@ -12216,7 +12524,7 @@
         ]
       },
       {
-        "id": "homematic_thermostat_set_mode",
+        "id": "HmIP-eTRV-C-thermostat_set_mode",
         "title": {
           "en": "Set Mode"
         },
