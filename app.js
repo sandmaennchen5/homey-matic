@@ -35,7 +35,7 @@ class Homematic extends Homey.App {
     async onUninit() {
         this.logger.log('info', 'Unloading homematic app...');
 
-        const cleanupPromises = Object.values(this.bridges).map(bridge => bridge.cleanup?.());
+        const cleanupPromises = Object.values(this.bridges).map(bridge => bridge.stop?.());
         
         await Promise.all(cleanupPromises);
 
@@ -78,23 +78,28 @@ class Homematic extends Homey.App {
         try {
             const connType = this.getConnectionType();
             this.logger.log('info', 'Connection type:', connType);
-            this.logger.log('info', "Initializing CCU Jack");
-            const bridgeInstance = new HomeMaticCCUJack(
-                this.logger,
-                this.homey,
-                bridge.type,
-                bridge.serial,
-                bridge.address,
-                this.settings.ccu_jack_mqtt_port,
-                this.settings.ccu_jack_user,
-                this.settings.ccu_jack_password,
-            );
+            this.logger.log('info', 'Initializing CCU Jack');
+
+            const bridgeInstance = new HomeMaticCCUJack({
+                logger: this.logger,
+                homey: this.homey,
+                type: bridge.type,
+                serial: bridge.serial,
+                ccuIP: bridge.address,
+                mqttPort: this.settings.ccu_jack_mqtt_port,
+                user: this.settings.ccu_jack_user,
+                password: this.settings.ccu_jack_password,
+            });
+
+            await bridgeInstance.start(); // 🔥 new lifecycle start
+
             this.bridges[bridge.serial] = bridgeInstance;
             return bridgeInstance;
         } catch (err) {
             this.logger.log('error', `Failed to initialize bridge ${bridge.serial}:`, err);
         }
     }
+
 
     setBridgeAddress(serial, address) {
         const bridge = this.bridges[serial];
