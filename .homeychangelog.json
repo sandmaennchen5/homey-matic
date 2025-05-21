@@ -49,5 +49,8 @@
   },
   "0.25.1": {
     "en": "Fixed: Device subscription"
+  },
+  "0.25.2": {
+    "en": "Code Optimization"
   }
 }

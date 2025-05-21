@@ -1,6 +1,6 @@
 {
   "id": "com.baumus.homey.matic",
-  "version": "0.25.1",
+  "version": "0.25.2",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
