@@ -46,5 +46,8 @@
   },
   "0.25.0": {
     "en": "Optimized for stability and performance"
+  },
+  "0.25.1": {
+    "en": "Fixed: Device subscription"
   }
 }
