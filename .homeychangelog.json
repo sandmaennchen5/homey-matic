@@ -52,5 +52,8 @@
   },
   "0.25.2": {
     "en": "Code Optimization"
+  },
+  "0.26.0": {
+    "en": "Added: Improved logging"
   }
 }
