@@ -94,6 +94,7 @@ class Homematic extends Homey.App {
             await bridgeInstance.start(); // 🔥 new lifecycle start
 
             this.bridges[bridge.serial] = bridgeInstance;
+            this.logger.log('info', `Bridge found: ${bridge.Serial}`);
             return bridgeInstance;
         } catch (err) {
             this.logger.log('error', `Failed to initialize bridge ${bridge.serial}:`, err);
