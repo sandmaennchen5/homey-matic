@@ -1,20 +1,37 @@
 # Homematic 2024
 
-This app adds support for Homematic devices in Homey via the CCU3. Homematic 2024 is an actively maintained version of the [Homematic app](https://github.com/LRuesink-WebArray/homey-matic), originally created by Timo Wendt, Bjoern Welker, Lex Ruesink und Simon Wenner. This app is not provided by, endorsed by, supported by, or affiliated with eQ-3 AG in any way.
+This is a Homey app for integrating Homematic and Homematic IP devices via a CCU3. It builds on the original [Homey-Matic app](https://github.com/LRuesink-WebArray/homey-matic), created by Timo Wendt, Bjoern Welker, Lex Ruesink, and Simon Wenner. This fork introduces a simplified, more robust, and future-proof foundation for reliable bidirectional communication between Homey and Homematic ecosystems.
 
-Any help from the community through e.g. pull requests is highly appreciated.
+> This app is not affiliated with, endorsed by, or supported by eQ-3 AG.
 
-## Important Update
+---
 
-As of **version 0.20.0** this app **exclusively supports CCU Jack**.  
-> CCU Jack is simpler to install, fully supports Homey’s security model, and delivers the most reliable push-events.
+## From version 0.20.0: A Cleaner, More Reliable Connection – CCU Jack
 
-| Why older transports were removed (MQTT-RedMatic / XML-, BIN-RPC) | Benefits of using CCU Jack only |
-| --- | --- |
-| Homey blocks inbound TCP ports → classic RPC push-events can’t reach Homey. | **Real-time updates** – all datapoint changes arrive instantly in Homey. |
-| RedMatic/Mosquitto needs multiple add-ons and fragile Node-RED flows to be installed on the CCU. | **Single self-contained add-on, easy installation on the CCU** |
-| Mixed transports doubled the support matrix and slowed bug-fixes for the Homey App prior to version 0.20.0. | **Lean code-base, faster releases for the Homey App** |
-| Community reports of high memory usage & disconnects. | **Lower memory footprint & higher stability** |
+Starting with version **0.20.0**, this app supports **only CCU Jack** as the connection method to your CCU3.
+
+This change was made with one goal in mind:  
+➡️ **To give you a more stable, secure, and maintenance-free experience.**
+
+In the past, this app supported multiple connection types, including XML-/BIN-RPC and MQTT via RedMatic. While flexible, these legacy options introduced significant technical challenges:
+
+- **RPC push events couldn't reliably reach Homey**, because Homey devices don’t expose open ports to the local network.
+- **RedMatic-based MQTT setups required multiple add-ons** (Mosquitto, Node-RED, custom flows).
+- Supporting multiple transport types made the app harder to maintain and troubleshoot.
+
+By focusing entirely on **CCU Jack**, we’ve removed this complexity.
+
+CCU Jack is:
+- 🔒 Secure (with optional authentication)  
+- ⚡ Lightweight and efficient  
+- 🔄 Real-time (no polling needed)  
+- 🧱 Easy to install (single add-on, no third-party dependencies)
+
+This is the recommended and most future-proof way to connect Homey with your Homematic system.
+
+> If you're migrating from an older version, no worries — just install CCU Jack, enter your connection details in the app, and everything continues to work. No re-pairing required.
+
+---
 
 ## CCU Jack Setup
 
@@ -24,21 +41,40 @@ CCU Jack is a great AddOn written in Go that can be installed on the CCU. It con
 
 CCU Jack is also the only way to use authentication for accessing the CCU from the Homey Homematic App.
 
-### Setup Instructions for your CCU3
+### Setup Instructions
 
-1. **Uninstall Existing MQTT AddOns**:
+1. **Uninstall Existing MQTT AddOns on your CCU3**:
    - If you already have the Mosquitto AddOn or any other MQTT AddOn installed, you either have to uninstall that or change the MQTT Port and PortTLS of CCU Jack in `/usr/local/addons/ccu-jack/ccu-jack.cfg`. Otherwise, CCU Jack will not start as the ports are already allocated by Mosquitto.
 
-2. **Install CCU Jack**:
-   - Follow the [installation process of CCU Jack on the CCU](https://github.com/mdzio/ccu-jack).
+2. **Download CCU Jack**  
+   - [Latest release on GitHub](https://github.com/mdzio/ccu-jack/releases)
+   
+3. **Install CCU Jack on your CCU3**:
+   - Follow the [installation process of CCU Jack on the CCU](https://github.com/mdzio/ccu-jack/wiki/Installation-AddOn).
 
-3. **Configure CCU Jack**:
-   - If CUxD support is required, add `CUxD` to the list of interfaces in the config file at `/usr/local/addons/ccu-jack/ccu-jack.cfg` and restart the CCU Jack AddOn.
+3. **Start CCU Jack on your CCU3**:
+   - Confirm it's running via the CCU UI. If CUxD support is required, add `CUxD` to the list of interfaces in the config file at `/usr/local/addons/ccu-jack/ccu-jack.cfg` and restart the CCU Jack AddOn.
 
 4. **Homey App Configuration**:
-   - Set the MQTT port in the settings of the Homey Homematic App to match the port configured in the CCU Jack configuration file.
+   - Set the MQTT port in the settings of the Homey Homematic App to match the port configured in the CCU Jack configuration file. The standard port is: 1883.
 
-## Reporting Issues
+### Migrating from older versions prio 0.20.0 and using RedMatic/MQTT or RPC
+
+1. Disable/remove Mosquitto or Node-RED on your CCU3
+2. Install CCU Jack 
+4. Update this Homey app to the latest version  
+5. Enter your CCU Jack connection settings in the Homey app
+
+> No device pairing required. All devices and flows will continue to work.
+
+---
+
+## Feedback & Contributions
+
+We welcome pull requests, bug reports, and feature suggestions from the community.  
+Feel free to fork the repo, open issues, or contribute code!
+
+### Reporting Issues
 
 - **GitHub Issues**:
   - If you encounter any issues, please open an issue on GitHub.
@@ -46,9 +82,13 @@ CCU Jack is also the only way to use authentication for accessing the CCU from t
 - **Unsupported Devices**:
   - If you have a device that is not currently supported, please open an issue on GitHub.
 
+---
+
 ## Discovery
 
 The app uses discovery to find your CCUs on the network. I was only able to test it with a single CCU. Therefore, it is possible that the app fails if multiple CCUs are discovered on the network.
+
+---
 
 ## Supported Devices
 
