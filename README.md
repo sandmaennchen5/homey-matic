@@ -55,7 +55,7 @@ CCU Jack is a lightweight add-on written in Go, running directly on your CCU. It
    - *(Optional)* If you need CUxD support, add `CUxD` to the interface list in `/usr/local/addons/ccu-jack/ccu-jack.cfg`, then restart CCU Jack.
 
 5. **Configure Homey App**:  
-   - In your Homey Homematic App settings, enter your CCU IP address and CCU Jack credentials (if set).
+   - In your Homey Homematic App settings, enter the CCU Jack MQTT port and credentials (if set).
    - The default MQTT port is **1883**.
 
 Your existing devices remain paired, and setup completes automatically.
