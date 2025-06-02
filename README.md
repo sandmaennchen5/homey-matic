@@ -11,9 +11,9 @@ As of **version 0.20.0** this app **exclusively supports CCU Jack**.
 
 | Why older transports were removed (MQTT-RedMatic / XML-, BIN-RPC) | Benefits of using CCU Jack |
 | --- | --- |
-| Homey blocks inbound TCP ports → classic RPC push-events can’t reach a real Homey hub. | **Real-time updates** – all datapoint changes arrive instantly in Homey. |
-| RedMatic/Mosquitto needs multiple add-ons and fragile Node-RED flows. | **Single self-contained add-on, easy installation on the CCU** |
-| Mixed transports doubled the support matrix and slowed bug-fixes. | **Lean code-base, faster releases for the Homey App** |
+| Homey blocks inbound TCP ports → classic RPC push-events can’t reach Homey. | **Real-time updates** – all datapoint changes arrive instantly in Homey. |
+| RedMatic/Mosquitto needs multiple add-ons and fragile Node-RED flows to be installed on the CCU. | **Single self-contained add-on, easy installation on the CCU** |
+| Mixed transports doubled the support matrix and slowed bug-fixes for the Homey App prior to version 0.20.0. | **Lean code-base, faster releases for the Homey App** |
 | Community reports of high memory usage & disconnects. | **Lower memory footprint & higher stability** |
 
 ## CCU Jack Setup
