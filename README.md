@@ -64,10 +64,10 @@ Your existing devices remain paired, and setup completes automatically.
 
 ## Migrating from Previous Versions (before 0.20.0)
 
-- Remove Mosquitto or Node-RED (optional, but recommended)
-- Install and start CCU Jack
-- Update your Homematic app on Homey to the latest version
-- Enter CCU Jack connection details in the Homey app settings
+1. Remove Mosquitto or Node-RED (optional, but recommended)
+2. Install and start CCU Jack
+3. Update your Homematic app on Homey to the latest version
+4. Enter CCU Jack connection details in the Homey app settings
 
 Your devices and flows will continue to operate seamlessly—no device re-pairing required.
 
