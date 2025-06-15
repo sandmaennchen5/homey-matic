@@ -215,6 +215,19 @@ The app uses network discovery to find CCUs automatically. However, testing was 
 * HmIP-eTRV-2
 * HmIP-eTRV-B
 * HmIP-eTRV-C
+* HMIP-WTH-A
+* HmIP-BWTH-A
+* HMIP-WRC2-A
+* HmIP-STHO-A
+* HmIP-WRC6-A
+* HmIP-STHD-A
+* HMIP-SWDO-A
+* HmIP-SMI55-A
+* HmIP-STH-A
+* HmIP-BRA-A
+* HmIP-WTH-1
+* HmIP-eTRV-C-2
+
 
 ## Credits
 

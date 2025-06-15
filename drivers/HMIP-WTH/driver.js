@@ -15,7 +15,7 @@ class HomematicDriver extends Driver {
             'homematic_thermostat_boost',
             'homematic_thermostat_weekprofile'
         ]
-        this.homematicTypes = ['HMIP-WTH', 'HmIP-WTH-2'];
+        this.homematicTypes = ['HMIP-WTH', 'HmIP-WTH-2', 'HmIP-WTH-1', 'HMIP-WTH-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
     }
 

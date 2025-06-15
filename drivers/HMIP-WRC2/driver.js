@@ -8,7 +8,7 @@ class HomematicDriver extends Driver {
     onInit() {
         super.onInit();
         this.capabilities = [];
-        this.homematicTypes = ['HMIP-WRC2'];
+        this.homematicTypes = ['HMIP-WRC2', 'HMIP-WRC2-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
 
         this._flowTriggerButtonPressed = this.homey.flow.getDeviceTriggerCard('HMIP-WRC2-press')

@@ -10,7 +10,7 @@ class HomematicDriver extends Driver {
         this.capabilities = [
             'alarm_battery'
         ];
-        this.homematicTypes = ['HmIP-WRC6'];
+        this.homematicTypes = ['HmIP-WRC6', 'HmIP-WRC6-A'];
         this.log(this.homematicTypes.join(','), 'has been inited');
 
         this._flowTriggerButtonPressed = this.homey.flow.getDeviceTriggerCard('HmIP-WRC6-press')

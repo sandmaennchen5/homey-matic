@@ -15,7 +15,7 @@ class HomematicDriver extends Driver {
             'homematic_thermostat_weekprofile',
             'homematic_measure_valve'
         ]
-        this.homematicTypes = ['HmIP-eTRV-C'];
+        this.homematicTypes = ['HmIP-eTRV-C', 'HmIP-eTRV-C-2'];
         this.log(this.homematicTypes.join(','), 'has been inited');
 
         this.homey.flow.getActionCard('HmIP-eTRV-C-thermostat_set_weekprofile')
