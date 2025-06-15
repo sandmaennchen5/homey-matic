@@ -1,13 +1,15 @@
 {
-  "id": "com.baumus.homey.matic",
+  "id": "com.sandmaennchen5.homey.matic",
   "version": "0.26.0",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
-    "en": "Homematic 2024"
+    "en": "Homematic (CCU-Jack)",
+    "de": "Homematic (CCU-Jack)"
   },
   "description": {
     "en": "Connect Homematic CCU3 with Homey"
+	"de": "Verbinde Homematic CCU3 (CCU-Jack) mit Homey"
   },
   "category": [
     "tools",
@@ -23,7 +25,7 @@
   "brandColor": "#192c6e",
   "homeyCommunityTopicId": 1057,
   "author": {
-    "name": "Robin Baum"
+    "name": "sandmaennchen5"
   },
   "contributing": {
     "donate": {
@@ -45,13 +47,16 @@
       },
       {
         "name": "Simon Wenner"
+      },
+      {
+        "name": "Robin Baum"
       }
     ]
   },
   "bugs": {
-    "url": "https://github.com/Baumus/homey-matic/issues"
+    "url": "https://github.com/sandmaennchen5/homey-matic/issues"
   },
-  "source": "https://github.com/Baumus/homey-matic",
+  "source": "https://github.com/sandmaennchen5/homey-matic",
   "api": {
     "getLogLines": {
       "method": "GET",
