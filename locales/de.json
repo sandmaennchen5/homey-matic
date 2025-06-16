@@ -1,0 +1,35 @@
+{
+    "settings": {
+        "title": "Homematic",
+        "subtitle": "Setup Homematic CCU Verbindung",
+		"form-label": "Bitte stellen Sie sicher, dass Sie zuerst CCU Jack auf Ihrer Homematic CCU3 installiert haben: ",
+		"link-label": "Installation Anleitung CCU Jack",
+        "ccu_jack": {
+            "title": "CCU Jack Einstellung",
+            "port": "MQTT Port",
+            "user": "Benutzer",
+            "password": "Kennwort"
+        },
+        "discovery": {
+            "use_stored_bridges": "Verwenden Sie gespeicherte CCUs (verwenden Sie diese nur bei Problemen mit der Erkennung)",
+            "description": "Einstellungen für die Ermittlung"
+        },
+		"button-save": "Speichern",		
+        "log": {
+            "title": "Protokolle",
+            "button": {
+                "getlog": "Protokolle anzeigen",
+				"getErrors": "Fehler anzeigen",
+				"getBridges": "Bridges anzeigen",
+				"deleteBridges": "Bridges löschen"
+            }
+        },
+		"message": {
+			"userpass": "Benutzername und Passwort müssen beide festgelegt oder beide leer sein.",
+			"port": "Der MQTT-Port muss eine positive Zahl sein.",
+			"saved": "Einstellungen gespeichert.",
+			"delbridge": "Bridges gelöscht!",
+			"noerrors": "Keine Fehler protokolliert"
+		}
+    }
+}

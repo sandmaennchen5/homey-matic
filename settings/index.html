@@ -6,24 +6,21 @@
 <body>
   <h1 class="homey-title" data-i18n="settings.title"></h1>
   <p class="homey-subtitle" data-i18n="settings.subtitle"></p>
-
-  <p class="homey-form-label">
-    Please assure you have installed CCU Jack on your Homematic CCU3 first:
-    <a href="https://github.com/mdzio/ccu-jack" target="_blank">CCU Jack Installation Guide</a>
+  <p class="homey-form-label" data-i18n="settings.form-label"></p>
+  <p class="homey-form-label"> <a href="https://github.com/mdzio/ccu-jack" target="_blank" data-i18n="settings.link-label"></a>
   </p>
-
   <fieldset class="homey-form-fieldset">
-    <legend class="homey-form-legend">CCU Jack Settings</legend>
+    <legend class="homey-form-legend" data-i18n="settings.ccu_jack.title"></legend>
     <div class="homey-form-group">
-      <label for="ccu_jack_mqtt_port" class="homey-form-label">MQTT Port</label>
+      <label for="ccu_jack_mqtt_port" class="homey-form-label" data-i18n="settings.ccu_jack.port"></label>
       <input id="ccu_jack_mqtt_port" class="homey-form-input" type="number" min="1" value="1883"/>
     </div>
     <div class="homey-form-group">
-      <label for="ccu_jack_user" class="homey-form-label">Username</label>
+      <label for="ccu_jack_user" class="homey-form-label" data-i18n="settings.ccu_jack.user"></label>
       <input id="ccu_jack_user" class="homey-form-input" type="text"/>
     </div>
     <div class="homey-form-group">
-      <label for="ccu_jack_password" class="homey-form-label">Password</label>
+      <label for="ccu_jack_password" class="homey-form-label" data-i18n="settings.ccu_jack.password"></label>
       <input id="ccu_jack_password" class="homey-form-input" type="password"/>
     </div>
   </fieldset>
@@ -37,23 +34,23 @@
     </label>
   </fieldset>
 
-  <button id="save" class="homey-button-primary">Save</button>
+  <button id="save" class="homey-button-primary" data-i18n="settings.button-save"></button>
   <p></p>
 
   <h2 class="homey-subtitle" data-i18n="settings.log.title"></h2>
-  <button class="homey-button-small" id="button_getlog" data-i18n="settings.log.button.getlogs">Show Logs</button>
+  <button class="homey-button-secondary-shadow" id="button_getlog" data-i18n="settings.log.button.getlog"></button>
   <div id="loglines"></div>
   <p></p>
 
-  <button class="homey-button-small" id="button_getErrors">Show Error Logs</button>
+  <button class="homey-button-secondary-shadow" id="button_getErrors" data-i18n="settings.log.button.getErrors"></button>
   <div id="errorlines" style="color: red; margin-top: 0.5em;"></div>
   <p></p>
 
-  <button class="homey-button-small" id="button_getBridges" data-i18n="settings.log.button.showBridges">Show Bridges</button>
+  <button class="homey-button-secondary-shadow" id="button_getBridges" data-i18n="settings.log.button.getBridges"></button>
   <div id="bridges"></div>
   <p></p>
 
-  <button class="homey-button-small" id="button_deleteBridges" data-i18n="settings.log.button.deleteBridges">Delete Bridges</button>
+  <button class="homey-button-danger-shadow" id="button_deleteBridges" data-i18n="settings.log.button.deleteBridges"></button>
 
   <script type="text/javascript">
   let HomeyAPI;
@@ -94,10 +91,10 @@
 
   function validateSettings(port, user, pass) {
     if ((user && !pass) || (!user && pass)) {
-      return 'User and Password must both be set or both be empty.';
+      return (Homey.__('settings.message.userpass'));
     }
     if (!port || !/^\d+$/.test(port) || parseInt(port) <= 0) {
-      return 'MQTT Port must be a positive number.';
+      return (Homey.__('settings.message.port'));
     }
     return null;
   }
@@ -118,7 +115,7 @@
         HomeyAPI.set('ccu_jack_password', pass || undefined),
         HomeyAPI.set('use_stored_bridges', useStored),
       ]);
-      HomeyAPI.alert('Settings saved', 'info');
+      HomeyAPI.alert(Homey.__('settings.message.saved'), 'info');
     } catch (err) {
       HomeyAPI.alert(err.message || err.toString(), 'error');
     }
@@ -146,7 +143,7 @@
   async function deleteBridges() {
     try {
       await HomeyAPI.api('GET', 'bridges/delete/');
-      HomeyAPI.alert('Bridges deleted', 'info');
+      HomeyAPI.alert(Homey.__('settings.message.delbridge'), 'info');
       showBridges();
     } catch (err) {
       HomeyAPI.alert(err.message || err.toString(), 'error');
@@ -160,7 +157,7 @@
     const container = document.getElementById('errorlines');
     container.innerHTML = errors.length
       ? errors.join('<br>')
-      : 'No errors logged.';
+      : (Homey.__('settings.message.noerrors'));
   } catch (err) {
     HomeyAPI.alert(err.message || err.toString(), 'error');
   }

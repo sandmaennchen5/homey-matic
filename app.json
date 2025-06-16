@@ -8,7 +8,8 @@
     "en": "Homematic 2024"
   },
   "description": {
-    "en": "Connect Homematic CCU3 with Homey"
+    "en": "Connect Homematic CCU3 with Homey",
+    "de": "Verbinde Homematic CCU3 mit Homey"
   },
   "category": [
     "tools",
@@ -12990,19 +12991,22 @@
         {
           "id": "0",
           "title": {
-            "en": "Off"
+            "en": "Off",
+            "de": "Aus"
           }
         },
         {
           "id": "1",
           "title": {
-            "en": "Red"
+            "en": "Red",
+            "de": "Rot"
           }
         },
         {
           "id": "2",
           "title": {
-            "en": "Green"
+            "en": "Green",
+            "de": "Grün"
           }
         },
         {
@@ -13042,14 +13046,16 @@
           "id": "2",
           "title": {
             "en": "Open",
-            "nl": "Open"
+            "nl": "Open",
+            "de": "Offen"
           }
         },
         {
           "id": "0",
           "title": {
             "en": "Closed",
-            "nl": "Closed"
+            "nl": "Closed",
+            "de": "Geschlossen"
           }
         },
         {
@@ -13061,7 +13067,8 @@
         }
       ],
       "title": {
-        "en": "State"
+        "en": "State",
+        "de": "Status"
       },
       "uiComponent": "picker",
       "getable": true,
@@ -13110,7 +13117,8 @@
     "homematic_swsd_alarm_button": {
       "type": "boolean",
       "title": {
-        "en": "Alarm off"
+        "en": "Alarm off",
+        "de": "Alarm aus"
       },
       "uiComponent": "button",
       "getable": false,
@@ -13122,7 +13130,8 @@
         {
           "id": "0",
           "title": {
-            "en": "Off"
+            "en": "Off",
+            "de": "Aus"
           }
         },
         {
@@ -13145,7 +13154,8 @@
         }
       ],
       "title": {
-        "en": "State"
+        "en": "State",
+        "de": "Status"
       },
       "uiComponent": "picker",
       "getable": true,
@@ -13179,7 +13189,8 @@
         }
       ],
       "title": {
-        "en": "Mode"
+        "en": "Mode",
+        "de": "Modus"
       },
       "uiComponent": "picker",
       "getable": true,
@@ -13238,7 +13249,7 @@
           "id": "2",
           "title": {
             "en": "Water",
-            "nl": "Wasser"
+            "de": "Wasser"
           }
         }
       ],
