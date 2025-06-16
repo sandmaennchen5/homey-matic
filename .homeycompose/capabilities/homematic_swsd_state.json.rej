@@ -1,0 +1,21 @@
+diff a/.homeycompose/capabilities/homematic_swsd_state.json b/.homeycompose/capabilities/homematic_swsd_state.json	(rejected hunks)
+@@ -4,7 +4,8 @@
+         {
+             "id": "0",
+             "title": {
+-                "en": "Off"
++                "en": "Off",
++				"de": "Aus"
+             }
+         },
+         {
+@@ -27,7 +28,8 @@
+         }
+     ],
+     "title": {
+-        "en": "State"
++        "en": "State",
++		"de": "Status"
+     },
+     "uiComponent": "picker",
+     "getable": true,

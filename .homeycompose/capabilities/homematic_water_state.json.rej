@@ -1,0 +1,10 @@
+diff a/.homeycompose/capabilities/homematic_water_state.json b/.homeycompose/capabilities/homematic_water_state.json	(rejected hunks)
+@@ -19,7 +19,7 @@
+             "id": "2",
+             "title": {
+                 "en": "Water",
+-                "nl": "Wasser"
++                "de": "Wasser"
+             }
+         }
+     ],

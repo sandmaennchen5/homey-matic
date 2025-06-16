@@ -17,7 +17,8 @@
         }
     ],
     "title": {
-        "en": "Mode"
+        "en": "Mode",
+		"de": "Modus"
     },
     "uiComponent": "picker",
     "getable": true,

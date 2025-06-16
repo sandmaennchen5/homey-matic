@@ -4,7 +4,8 @@
         {
             "id": "0",
             "title": {
-                "en": "Off"
+                "en": "Off",
+				"de": "Aus"
             }
         },
         {
@@ -27,7 +28,8 @@
         }
     ],
     "title": {
-        "en": "State"
+        "en": "State",
+		"de": "Status"
     },
     "uiComponent": "picker",
     "getable": true,

@@ -9,7 +9,11 @@
   },
   "description": {
     "en": "Connect Homematic CCU3 with Homey",
+<<<<<<< HEAD
 	"de": "Verbinde Homematic CCU3 (CCU-Jack) mit Homey"
+=======
+	"de": "Verbinde Homematic CCU3 mit Homey"
+>>>>>>> Settings: de.json translation added
   },
   "category": [
     "tools",

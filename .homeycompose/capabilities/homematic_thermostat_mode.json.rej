@@ -1,0 +1,11 @@
+diff a/.homeycompose/capabilities/homematic_thermostat_mode.json b/.homeycompose/capabilities/homematic_thermostat_mode.json	(rejected hunks)
+@@ -17,7 +17,8 @@
+         }
+     ],
+     "title": {
+-        "en": "Mode"
++        "en": "Mode",
++		"de": "Modus"
+     },
+     "uiComponent": "picker",
+     "getable": true,

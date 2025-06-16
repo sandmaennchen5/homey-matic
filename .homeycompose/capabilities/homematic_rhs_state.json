@@ -5,14 +5,16 @@
             "id": "2",
             "title": {
                 "en": "Open",
-                "nl": "Open"
+                "nl": "Open",
+				"de": "Offen"
             }
         },
         {
             "id": "0",
             "title": {
                 "en": "Closed",
-                "nl": "Closed"
+                "nl": "Closed",
+				"de": "Geschlossen"
             }
         },
         {
@@ -24,7 +26,8 @@
         }
     ],
     "title": {
-        "en": "State"
+        "en": "State",
+		"de": "Status"
     },
     "uiComponent": "picker",
     "getable": true,
