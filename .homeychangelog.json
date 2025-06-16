@@ -55,5 +55,8 @@
   },
   "0.26.0": {
     "en": "Added: Improved logging"
+  },
+  "0.26.1": {
+    "en": "de.lang update"
   }
 }

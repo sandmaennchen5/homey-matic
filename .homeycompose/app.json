@@ -1,6 +1,6 @@
 {
   "id": "com.sandmaennchen5.homey.matic",
-  "version": "0.26.0",
+  "version": "0.26.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "name": {
@@ -9,11 +9,7 @@
   },
   "description": {
     "en": "Connect Homematic CCU3 with Homey",
-<<<<<<< HEAD
-	"de": "Verbinde Homematic CCU3 (CCU-Jack) mit Homey"
-=======
-	"de": "Verbinde Homematic CCU3 mit Homey"
->>>>>>> Settings: de.json translation added
+    "de": "Verbinde Homematic CCU3 (CCU-Jack) mit Homey"
   },
   "category": [
     "tools",
